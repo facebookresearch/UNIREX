@@ -1,0 +1,16 @@
+# @package _global_
+
+defaults:
+  - override /model: lm 
+  - override /dataset: default
+
+
+model:
+  attn_reg: True
+  attn_reg_layers: last
+  attr_algo: layer-integrated-gradients
+
+# should provide one
+dataset:
+  dataset: ???
+  expl_path: ???

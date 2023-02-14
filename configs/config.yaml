@@ -1,0 +1,23 @@
+# default use fixed-lm without expl
+defaults:
+    - model: lm
+    - data: default
+    - logger: neptune
+    - setup: a100
+    - hydra: default
+    - training: base
+    - trainer: defaults
+    - override /hydra/job_logging: colorlog
+    - override /hydra/hydra_logging: colorlog
+
+seed: 0
+debug: False
+
+work_dir: ${hydra:runtime.cwd}
+data_dir: '${work_dir}/../data'
+log_dir: '${work_dir}/../logs'
+save_dir: '${work_dir}/../save'
+
+save_checkpoint: False
+save_rand_checkpoint: False
+early_stopping: True

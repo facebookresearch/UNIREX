@@ -1,0 +1,12 @@
+_target_: src.utils.logging.get_neptune_logger
+
+logger: neptune
+
+log_db: manual_runs
+tag_attrs: 
+  - ${data.dataset}
+  - ${model.model}
+  - ${model.arch}
+name: test
+offline: False
+project_name: your-project-name

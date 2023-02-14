@@ -1,0 +1,71 @@
+_target_: src.model.lm.LanguageModel
+
+defaults:
+  - optimizer: hf_adamw
+  - scheduler: linear_with_warmup
+
+model: lm
+arch: google/bigbird-roberta-base
+dataset: ${data.dataset}
+
+num_freeze_layers: 0
+freeze_epochs: -1
+
+expl_reg: True
+train_topk: [1, 5, 10, 20, 50]
+eval_topk: [1, 5, 10, 20, 50]
+expl_reg_freq: 1
+task_wt: 1.0
+
+comp_criterion: margin
+comp_margin: 1.0
+comp_target: False
+comp_wt: 0.0
+
+suff_criterion: margin
+suff_margin: 0.1
+suff_target: False
+suff_wt: 0.0
+
+log_odds: False
+log_odds_target: False
+
+plaus_criterion: bce
+plaus_margin: 0.1
+plaus_wt: 0.0
+
+explainer_type: self_lm
+expl_head_type: linear
+expl_head_mlp_hidden_dim: null
+expl_head_mlp_hidden_layers: null
+expl_head_mlp_dropout: 0.0
+expl_head_mlp_layernorm: False
+attr_algo: null
+attr_pooling: null
+attr_mlp_hidden_dim: null
+attr_mlp_hidden_layers: null
+attr_mlp_dropout: 0.0
+attr_mlp_layernorm: False
+ig_steps: 3
+internal_batch_size: null
+return_convergence_delta: False
+gradshap_n_samples: null
+gradshap_stdevs: null
+
+fresh: False
+fresh_extractor: null
+
+l2e: False
+l2e_wt: 0.0
+l2e_criterion: ce
+l2e_classes: 5
+
+a2r: False
+a2r_wt: 0.0
+a2r_criterion: null
+a2r_task_out: null 
+
+save_outputs: False
+exp_id: null
+
+measure_attrs_runtime: False

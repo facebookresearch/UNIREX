@@ -1,0 +1,61 @@
+_target_: src.model.lm.LanguageModel
+
+defaults:
+  - optimizer: hf_adamw
+  - scheduler: linear_with_warmup
+
+model: lm
+arch: google/bigbird-roberta-base
+dataset: ${data.dataset}
+
+num_freeze_layers: 0
+freeze_epochs: -1
+
+expl_reg: False
+train_topk: [100]
+eval_topk: [100]
+expl_reg_freq: 1e100
+task_wt: null
+
+comp_criterion: null
+comp_margin: null
+comp_target: False
+comp_wt: null
+
+suff_criterion: null
+suff_margin: null
+suff_target: False
+suff_wt: null
+
+log_odds: False
+log_odds_target: False
+
+plaus_criterion: null
+plaus_margin: null
+plaus_wt: null
+
+explainer_type: null
+expl_head_type: null
+expl_head_mlp_hidden_dim: null
+expl_head_mlp_hidden_layers: null
+expl_head_mlp_dropout: null
+expl_head_mlp_layernorm: null
+attr_algo: null
+attr_pooling: null
+attr_mlp_hidden_dim: null
+attr_mlp_hidden_layers: null
+attr_mlp_dropout: null
+attr_mlp_layernorm: null
+ig_steps: null
+internal_batch_size: null
+return_convergence_delta: False
+gradshap_n_samples: null
+gradshap_stdevs: null
+
+fresh: True
+fresh_extractor: oracle
+
+save_outputs: False
+exp_id: null
+
+measure_attrs_runtime: False

@@ -1,0 +1,2 @@
+lr_scheduler: linear_with_warmup
+warmup_updates: 0.1

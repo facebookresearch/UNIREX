@@ -1,0 +1,30 @@
+_target_: src.data.data.DataModule
+
+dataset: irony
+
+num_workers: ${setup.num_workers}
+data_path: "${data_dir}/${.dataset}/${model.arch}/"
+train_batch_size: ${setup.train_batch_size}
+eval_batch_size: ${setup.eval_batch_size}
+eff_train_batch_size: ${setup.eff_train_batch_size}
+mode: 'max'
+
+num_train: null
+num_dev: null
+num_test: null
+num_train_seed: 0
+num_dev_seed: 0
+num_test_seed: 0
+
+pct_train_rationales: null
+pct_train_rationales_seed: 0
+train_rationales_batch_factor: 2.0
+
+neg_weight: 1
+
+fresh_exp_id: null
+fresh_attr_algo: null
+fresh_topk: null
+
+l2e_exp_id: null
+l2e_attr_algo: null

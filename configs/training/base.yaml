@@ -1,0 +1,7 @@
+evaluate_ckpt: False
+finetune_ckpt: False
+# shouldn't have ckpt unless fine tune ckpt
+ckpt_path: null
+eval_splits: 'all'   # comma separated (no space). E.g., train,dev,test
+train_shuffle: True
+patience: 5

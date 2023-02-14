@@ -1,0 +1,19 @@
+# python==3.8.11 (conda create -n hitl-expl-reg python=3.8.11)
+# torch==1.7.1 (conda install pytorch==1.7.1 torchvision torchaudio cudatoolkit=10.1 -c pytorch)
+transformers
+datasets
+pytorch-lightning==1.4.8
+hydra-core==1.1.0
+omegaconf==2.1.1
+numpy>=1.17
+jsonlines==1.2.0
+tqdm==4.48.2
+captum==0.4.0
+pickle5==0.0.11
+neptune-client==0.9.16
+rich==10.6.0
+hydra_colorlog==1.1.0
+hydra-optuna-sweeper==1.1.0
+sentencepiece==0.1.96
+scikit-learn==1.0.2
+torchmetrics==0.4.0
